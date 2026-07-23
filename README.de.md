@@ -46,7 +46,7 @@ erneute Einstecken des Empfängers.
 - Lokale Verarbeitung ohne Telemetrie oder Netzwerkzugriff
 - Firmware muss manuell ausgewählt werden
 - Kein absichtlicher Downgrade-Modus
-- Windows-ARM64-Version verfügbar; x64 ist noch nicht veröffentlicht
+- Windows-Versionen für ARM64 und 32-Bit-x86 verfügbar; natives x64 ist noch nicht veröffentlicht
 
 Obwohl der praktische Updateablauf getestet wurde, sollte die App weiterhin als experimentell
 betrachtet werden. Unterschiedliche Hardware- oder Firmware-Revisionen können sich anders
@@ -70,7 +70,7 @@ nicht unterstützt.
 
 Zum Ausführen:
 
-- macOS 26.0 oder neuer oder Windows 11 ARM64 mit .NET 10 Desktop Runtime
+- macOS 26.0 oder neuer oder eine kompatible Windows-10/11-Installation
 - Logitech Bolt USB Receiver
 - zwei zueinander passende, signierte Bolt-DFU-Dateien
 - eine stabile, direkte USB-Verbindung
@@ -83,18 +83,21 @@ Zum Bauen:
   verteilt werden soll
 - .NET 10 SDK unter Windows für die WPF-App
 
-Das derzeitige Deployment Target der macOS-App ist macOS 26.0. Die verfügbare Windows-Datei ist
-für Windows ARM64 gebaut und benötigt die .NET 10 Desktop Runtime.
+Das derzeitige Deployment Target der macOS-App ist macOS 26.0. Windows-Downloads sind für ARM64
+und 32-Bit-x86 verfügbar. Beide benötigen die zur Architektur passende .NET 10 Desktop Runtime.
 
 ## Downloads
 
 | Plattform | Download | Hinweise |
 |---|---|---|
 | macOS | [BoltUpdateTool 1.0.0](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/v1.0.0) | Universal, Developer-ID-signiert und notarisiert |
-| Windows ARM64 | [BoltUpdateTool 1.0.0 für Windows ARM64](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/windows-v1.0.0) | Framework-abhängig, derzeit nicht signiert |
+| Windows ARM64 | [ZIP herunterladen](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-arm64.zip) | Benötigt .NET 10 Desktop Runtime ARM64; nicht signiert |
+| Windows x86 (32 Bit) | [ZIP herunterladen](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-x86.zip) | Benötigt .NET 10 Desktop Runtime x86; nicht signiert |
 
-Die Windows-App ist noch nicht mit Authenticode signiert. Windows SmartScreen kann deshalb eine
-Warnung anzeigen. Prüfe vor dem Start die beim Release veröffentlichte SHA-256-Prüfsumme.
+Die Windows-Apps sind noch nicht mit Authenticode signiert. Windows SmartScreen kann deshalb
+eine Warnung anzeigen. Prüfe vor dem Start die beim jeweiligen Download veröffentlichte
+SHA-256-Prüfsumme. Die x86-Version ist eine 32-Bit-App und läuft auch auf kompatiblen
+x64-Windows-Installationen; ein nativer x64-Build ist noch nicht veröffentlicht.
 
 ## Firmware auswählen
 

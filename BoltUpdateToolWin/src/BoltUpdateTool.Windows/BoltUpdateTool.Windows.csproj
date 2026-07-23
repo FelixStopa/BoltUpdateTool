@@ -3,6 +3,7 @@
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Assets\BoltUpdateTool.ico</ApplicationIcon>
+    <RuntimeIdentifiers>win-arm64;win-x86</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bolt.Protocol\Bolt.Protocol.csproj" />

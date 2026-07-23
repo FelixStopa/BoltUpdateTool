@@ -14,32 +14,34 @@ The Windows application provides the same core update flow as the macOS version:
 
 Firmware is not included and is never downloaded by the application.
 
-## Current binary release
+## Current binary releases
 
-The current public Windows binary is:
+The current public Windows binaries are:
 
 - version `1.0.0`
-- Windows ARM64
 - framework-dependent
-- requires the [.NET 10 Desktop Runtime for Windows ARM64](https://dotnet.microsoft.com/download/dotnet/10.0)
 - not currently Authenticode-signed
 
-Download it from
-[BoltUpdateTool 1.0.0 for Windows ARM64](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/windows-v1.0.0).
+| Architecture | Download | Required runtime |
+|---|---|---|
+| Windows ARM64 | [ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-arm64.zip) | [.NET 10 Desktop Runtime ARM64](https://dotnet.microsoft.com/download/dotnet/10.0) |
+| Windows x86 (32-bit) | [ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-x86.zip) | [.NET 10 Desktop Runtime x86](https://dotnet.microsoft.com/download/dotnet/10.0) |
 
-Because the executable is not yet Authenticode-signed, Windows SmartScreen may show a warning.
-Verify the SHA-256 checksum provided with the release before starting the application.
+Because the executables are not yet Authenticode-signed, Windows SmartScreen may show a
+warning. Verify the SHA-256 checksum provided with each release asset before starting the
+application.
 
 ## Requirements
 
-- Windows 11 ARM64
+- a compatible Windows 10/11 installation
 - .NET 10 SDK for development, or .NET 10 Desktop Runtime for the published binary
 - Logitech Bolt USB Receiver
 - two matching, unpacked, signed Bolt `.dfu` files
 - a stable USB connection
 
-The current artifact is not compatible with standard x64-only Windows installations. An x64
-release can be produced from the same source using runtime identifier `win-x64`.
+The x86 download is a 32-bit application and can run on compatible x64 Windows installations
+through Windows 32-bit compatibility. A native x64 download is not yet published, but can be
+produced from the same source using runtime identifier `win-x64`.
 
 ## Build
 
@@ -51,7 +53,7 @@ dotnet restore BoltUpdateTool.Windows.sln
 dotnet build BoltUpdateTool.Windows.sln --configuration Release
 ```
 
-Create a framework-dependent ARM64 publish directory:
+Create a framework-dependent publish directory. Choose the required runtime identifier:
 
 ```powershell
 dotnet publish src/BoltUpdateTool.Windows/BoltUpdateTool.Windows.csproj `
@@ -61,7 +63,9 @@ dotnet publish src/BoltUpdateTool.Windows/BoltUpdateTool.Windows.csproj `
   --output artifacts/BoltUpdateTool.Windows
 ```
 
-For x64, replace `win-arm64` with `win-x64`.
+- ARM64: `win-arm64`
+- 32-bit x86: `win-x86`
+- native 64-bit x64: `win-x64`
 
 ## Tests
 

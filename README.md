@@ -44,7 +44,7 @@ reconnecting the receiver.
 - Entirely local operation with no telemetry or network access
 - Firmware must be selected manually
 - No intentional firmware downgrade mode
-- Windows ARM64 release available; x64 build is not yet published
+- Windows ARM64 and 32-bit x86 releases available; native x64 is not yet published
 
 Although the practical update process has been tested, the application should still be treated
 as experimental. Other hardware or firmware revisions may behave differently.
@@ -67,7 +67,7 @@ supported.
 
 To run the application:
 
-- macOS 26.0 or later, or Windows 11 ARM64 with .NET 10 Desktop Runtime
+- macOS 26.0 or later, or a compatible Windows 10/11 installation
 - Logitech Bolt USB Receiver
 - two matching, signed Bolt DFU files
 - a stable, direct USB connection
@@ -80,18 +80,21 @@ To build the application:
   for distribution
 - .NET 10 SDK on Windows for the WPF application
 
-The current macOS deployment target is macOS 26.0. The available Windows binary targets
-Windows ARM64 and requires the .NET 10 Desktop Runtime.
+The current macOS deployment target is macOS 26.0. Windows downloads are available for ARM64
+and 32-bit x86. Each requires the matching architecture of the .NET 10 Desktop Runtime.
 
 ## Downloads
 
 | Platform | Download | Notes |
 |---|---|---|
 | macOS | [BoltUpdateTool 1.0.0](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/v1.0.0) | Universal, Developer ID signed and notarized |
-| Windows ARM64 | [BoltUpdateTool 1.0.0 for Windows ARM64](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/windows-v1.0.0) | Framework-dependent, currently unsigned |
+| Windows ARM64 | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-arm64.zip) | Requires .NET 10 Desktop Runtime ARM64; unsigned |
+| Windows x86 (32-bit) | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-x86.zip) | Requires .NET 10 Desktop Runtime x86; unsigned |
 
-The Windows build is not Authenticode-signed. Windows SmartScreen may therefore display a
-warning. Verify the SHA-256 checksum published with the release before running it.
+The Windows builds are not Authenticode-signed. Windows SmartScreen may therefore display a
+warning. Verify the SHA-256 checksum published with each download before running it. The x86
+build is a 32-bit application and can also run on compatible x64 Windows installations; a
+native x64 build is not yet published.
 
 ## Selecting firmware
 
