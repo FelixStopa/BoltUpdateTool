@@ -336,8 +336,16 @@ This repository contains no Logitech firmware and no official Logitech applicati
 behavior and constants were reconstructed through device analysis and publicly available
 implementations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for further information.
 
-No software license has been selected for this project yet. Public availability of the source
-code does not automatically grant permission to copy, modify, or redistribute it.
+## License
+
+BoltUpdateTool is licensed under the
+[PolyForm Noncommercial License 1.0.0](LICENSE.md). You may use, modify, and redistribute the
+software for permitted noncommercial purposes. Selling the software or otherwise using it for
+a commercial purpose is not permitted without a separate license from the copyright holder.
+
+This is a source-available license, not an OSI-approved Open Source license. Third-party
+materials remain subject to their respective licenses as documented in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Contact
 
