@@ -9,7 +9,8 @@
 </p>
 
 <p align="center">
-  An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver.
+  An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver,<br>
+  built after an older receiver firmware caused problems on PlayStation 5.
 </p>
 
 > [!WARNING]
@@ -36,6 +37,16 @@ The application supports the complete update process:
 The progress bar remains visible throughout flashing. If the automatic bootloader transition
 is not detected immediately, the application provides clear instructions for unplugging and
 reconnecting the receiver.
+
+## PlayStation 5 (PS5) compatibility
+
+I built this tool because my Logitech Bolt receiver did not work on the PS5 with its older
+firmware. After updating it to application firmware `MPR05.03_B0020` and radio firmware
+`00.00_B013E`, it worked in my setup.
+
+If your Logitech Bolt receiver is not working on PlayStation 5, a firmware update may help.
+Firmware is not included, and compatibility can still vary by device. This is an unofficial
+project and is not affiliated with Logitech or Sony.
 
 ## Project status
 
@@ -304,6 +315,9 @@ pull requests, or forks of this repository.
 
 Logitech, Logi, Bolt, and related trademarks belong to their respective owners. This project is
 not affiliated with Logitech and is neither supported nor endorsed by Logitech.
+
+PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc. This project is not
+affiliated with, supported by, or endorsed by Sony Interactive Entertainment.
 
 This repository contains no Logitech firmware and no official Logitech applications. Protocol
 behavior and constants were reconstructed through device analysis and publicly available
