@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		DCD2A1153010CE6500E3CFE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD2A0FF3010CE6400E3CFE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD2A1063010CE6400E3CFE9;
+			remoteInfo = BoltUpdateTool;
+		};
+		DCD2A11F3010CE6500E3CFE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCD2A0FF3010CE6400E3CFE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD2A1063010CE6400E3CFE9;
+			remoteInfo = BoltUpdateTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DCD2A1073010CE6400E3CFE9 /* BoltUpdateTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoltUpdateTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD2A1143010CE6500E3CFE9 /* BoltUpdateToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoltUpdateToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD2A11E3010CE6500E3CFE9 /* BoltUpdateToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoltUpdateToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DCD2A1093010CE6400E3CFE9 /* BoltUpdateTool */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BoltUpdateTool;
+			sourceTree = "<group>";
+		};
+		DCD2A1173010CE6500E3CFE9 /* BoltUpdateToolTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BoltUpdateToolTests;
+			sourceTree = "<group>";
+		};
+		DCD2A1213010CE6500E3CFE9 /* BoltUpdateToolUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BoltUpdateToolUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCD2A1043010CE6400E3CFE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD2A1113010CE6500E3CFE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD2A11B3010CE6500E3CFE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCD2A0FE3010CE6400E3CFE9 = {
+			isa = PBXGroup;
+			children = (
+				DCD2A1093010CE6400E3CFE9 /* BoltUpdateTool */,
+				DCD2A1173010CE6500E3CFE9 /* BoltUpdateToolTests */,
+				DCD2A1213010CE6500E3CFE9 /* BoltUpdateToolUITests */,
+				DCD2A1083010CE6400E3CFE9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCD2A1083010CE6400E3CFE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2A1073010CE6400E3CFE9 /* BoltUpdateTool.app */,
+				DCD2A1143010CE6500E3CFE9 /* BoltUpdateToolTests.xctest */,
+				DCD2A11E3010CE6500E3CFE9 /* BoltUpdateToolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCD2A1063010CE6400E3CFE9 /* BoltUpdateTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD2A1283010CE6500E3CFE9 /* Build configuration list for PBXNativeTarget "BoltUpdateTool" */;
+			buildPhases = (
+				DCD2A1033010CE6400E3CFE9 /* Sources */,
+				DCD2A1043010CE6400E3CFE9 /* Frameworks */,
+				DCD2A1053010CE6400E3CFE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DCD2A1093010CE6400E3CFE9 /* BoltUpdateTool */,
+			);
+			name = BoltUpdateTool;
+			packageProductDependencies = (
+			);
+			productName = BoltUpdateTool;
+			productReference = DCD2A1073010CE6400E3CFE9 /* BoltUpdateTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCD2A1133010CE6500E3CFE9 /* BoltUpdateToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD2A12B3010CE6500E3CFE9 /* Build configuration list for PBXNativeTarget "BoltUpdateToolTests" */;
+			buildPhases = (
+				DCD2A1103010CE6500E3CFE9 /* Sources */,
+				DCD2A1113010CE6500E3CFE9 /* Frameworks */,
+				DCD2A1123010CE6500E3CFE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCD2A1163010CE6500E3CFE9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DCD2A1173010CE6500E3CFE9 /* BoltUpdateToolTests */,
+			);
+			name = BoltUpdateToolTests;
+			packageProductDependencies = (
+			);
+			productName = BoltUpdateToolTests;
+			productReference = DCD2A1143010CE6500E3CFE9 /* BoltUpdateToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCD2A11D3010CE6500E3CFE9 /* BoltUpdateToolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCD2A12E3010CE6500E3CFE9 /* Build configuration list for PBXNativeTarget "BoltUpdateToolUITests" */;
+			buildPhases = (
+				DCD2A11A3010CE6500E3CFE9 /* Sources */,
+				DCD2A11B3010CE6500E3CFE9 /* Frameworks */,
+				DCD2A11C3010CE6500E3CFE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCD2A1203010CE6500E3CFE9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DCD2A1213010CE6500E3CFE9 /* BoltUpdateToolUITests */,
+			);
+			name = BoltUpdateToolUITests;
+			packageProductDependencies = (
+			);
+			productName = BoltUpdateToolUITests;
+			productReference = DCD2A11E3010CE6500E3CFE9 /* BoltUpdateToolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCD2A0FF3010CE6400E3CFE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					DCD2A1063010CE6400E3CFE9 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					DCD2A1133010CE6500E3CFE9 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = DCD2A1063010CE6400E3CFE9;
+					};
+					DCD2A11D3010CE6500E3CFE9 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = DCD2A1063010CE6400E3CFE9;
+					};
+				};
+			};
+			buildConfigurationList = DCD2A1023010CE6400E3CFE9 /* Build configuration list for PBXProject "BoltUpdateTool" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCD2A0FE3010CE6400E3CFE9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DCD2A1083010CE6400E3CFE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCD2A1063010CE6400E3CFE9 /* BoltUpdateTool */,
+				DCD2A1133010CE6500E3CFE9 /* BoltUpdateToolTests */,
+				DCD2A11D3010CE6500E3CFE9 /* BoltUpdateToolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCD2A1053010CE6400E3CFE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD2A1123010CE6500E3CFE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD2A11C3010CE6500E3CFE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCD2A1033010CE6400E3CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD2A1103010CE6500E3CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCD2A11A3010CE6500E3CFE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCD2A1163010CE6500E3CFE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD2A1063010CE6400E3CFE9 /* BoltUpdateTool */;
+			targetProxy = DCD2A1153010CE6500E3CFE9 /* PBXContainerItemProxy */;
+		};
+		DCD2A1203010CE6500E3CFE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD2A1063010CE6400E3CFE9 /* BoltUpdateTool */;
+			targetProxy = DCD2A11F3010CE6500E3CFE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DCD2A1263010CE6500E3CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCD2A1273010CE6500E3CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		DCD2A1293010CE6500E3CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BoltUpdateTool;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FelixStopa.BoltUpdateTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DCD2A12A3010CE6500E3CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BoltUpdateTool;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FelixStopa.BoltUpdateTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DCD2A12C3010CE6500E3CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FelixStopa.BoltUpdateToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoltUpdateTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BoltUpdateTool";
+			};
+			name = Debug;
+		};
+		DCD2A12D3010CE6500E3CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FelixStopa.BoltUpdateToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BoltUpdateTool.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BoltUpdateTool";
+			};
+			name = Release;
+		};
+		DCD2A12F3010CE6500E3CFE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FelixStopa.BoltUpdateToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BoltUpdateTool;
+			};
+			name = Debug;
+		};
+		DCD2A1303010CE6500E3CFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 48G93QFJYW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FelixStopa.BoltUpdateToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = BoltUpdateTool;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCD2A1023010CE6400E3CFE9 /* Build configuration list for PBXProject "BoltUpdateTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD2A1263010CE6500E3CFE9 /* Debug */,
+				DCD2A1273010CE6500E3CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD2A1283010CE6500E3CFE9 /* Build configuration list for PBXNativeTarget "BoltUpdateTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD2A1293010CE6500E3CFE9 /* Debug */,
+				DCD2A12A3010CE6500E3CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD2A12B3010CE6500E3CFE9 /* Build configuration list for PBXNativeTarget "BoltUpdateToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD2A12C3010CE6500E3CFE9 /* Debug */,
+				DCD2A12D3010CE6500E3CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCD2A12E3010CE6500E3CFE9 /* Build configuration list for PBXNativeTarget "BoltUpdateToolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCD2A12F3010CE6500E3CFE9 /* Debug */,
+				DCD2A1303010CE6500E3CFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCD2A0FF3010CE6400E3CFE9 /* Project object */;
+}

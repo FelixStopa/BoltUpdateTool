@@ -1,0 +1,10 @@
+.DS_Store
+**/.DS_Store
+**/xcuserdata/
+DerivedData/
+
+# Local vendor applications and extracted proprietary firmware are never
+# included in the public source repository.
+*.app/
+ExtractedFirmware/
+BoltUpdateTool/Resources/*.dfu
