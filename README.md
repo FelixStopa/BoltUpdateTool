@@ -121,11 +121,11 @@ first, then select both DFU files at the same time.
 
 A firmware package that has been used with this tool is available from this external file host:
 
-**[Download firmware from GoFile](https://gofile.io/d/oJAxyJ)**
+**[Download firmware](https://gofile.io/d/oJAxyJ)**
 
 The files are hosted by a third-party file hosting service. I am not the owner or distributor
 of these files, I have no control over their content, and I am not affiliated with the file
-host, Logitech, or Sony. This link is provided for convenience only, without any guarantee
+host, Logitech. This link is provided for convenience only, without any guarantee
 regarding availability, authenticity, safety, or compatibility. All rights to the firmware
 remain with their respective owners. Make sure that you comply with all applicable licenses
 and terms before downloading or using the firmware.
