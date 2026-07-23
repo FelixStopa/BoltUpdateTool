@@ -117,6 +117,19 @@ BoltUpdateTool expects **two unpacked `.dfu` files**, selected together in the f
 A ZIP archive cannot be selected directly. Extract the lawfully obtained firmware package
 first, then select both DFU files at the same time.
 
+### Third-party firmware download
+
+A firmware package that has been used with this tool is available from this external file host:
+
+**[Download firmware from GoFile](https://gofile.io/d/oJAxyJ)**
+
+The files are hosted by a third-party file hosting service. I am not the owner or distributor
+of these files, I have no control over their content, and I am not affiliated with the file
+host, Logitech, or Sony. This link is provided for convenience only, without any guarantee
+regarding availability, authenticity, safety, or compatibility. All rights to the firmware
+remain with their respective owners. Make sure that you comply with all applicable licenses
+and terms before downloading or using the firmware.
+
 The application validates, among other details:
 
 - the file extension and a plausible file size

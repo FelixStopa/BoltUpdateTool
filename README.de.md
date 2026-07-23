@@ -121,6 +121,21 @@ markiert werden:
 Eine ZIP-Datei kann nicht direkt ausgewählt werden. Entpacke das rechtmäßig bezogene
 Firmwarepaket vorher und wähle anschließend beide DFU-Dateien gleichzeitig aus.
 
+### Externer Firmware-Download
+
+Ein Firmwarepaket, das mit diesem Tool verwendet wurde, ist bei diesem externen Filehoster
+verfügbar:
+
+**[Firmware bei GoFile herunterladen](https://gofile.io/d/oJAxyJ)**
+
+Die Dateien werden von einem externen Filehoster bereitgestellt. Ich bin weder Eigentümer noch
+Anbieter dieser Dateien, habe keine Kontrolle über deren Inhalt und stehe weder mit dem
+Filehoster noch mit Logitech oder Sony in Verbindung. Der Link wird lediglich als Hinweis
+bereitgestellt, ohne Garantie für Verfügbarkeit, Echtheit, Sicherheit oder Kompatibilität.
+Alle Rechte an der Firmware verbleiben bei den jeweiligen Rechteinhabern. Stelle vor dem
+Herunterladen oder Verwenden sicher, dass du alle anwendbaren Lizenzen und Bedingungen
+einhältst.
+
 Die App prüft unter anderem:
 
 - Dateiendung und plausible Dateigröße
