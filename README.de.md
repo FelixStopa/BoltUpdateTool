@@ -351,9 +351,17 @@ Protokollverhalten und Konstanten wurden anhand öffentlich verfügbarer Impleme
 durch Geräteanalyse nachvollzogen. Weitere Angaben befinden sich in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-Für dieses Projekt wurde noch keine Softwarelizenz ausgewählt. Die öffentliche Sichtbarkeit des
-Quellcodes ist daher nicht automatisch eine Erlaubnis, ihn zu kopieren, zu verändern oder
-weiterzuverbreiten.
+## Lizenz
+
+BoltUpdateTool steht unter der
+[PolyForm Noncommercial License 1.0.0](LICENSE.md). Die Software darf für erlaubte
+nichtkommerzielle Zwecke verwendet, verändert und weitergegeben werden. Der Verkauf oder eine
+andere kommerzielle Nutzung ist ohne eine gesonderte Erlaubnis des Rechteinhabers nicht
+gestattet.
+
+Dies ist eine Source-Available-Lizenz und keine von der OSI anerkannte Open-Source-Lizenz.
+Materialien Dritter unterliegen weiterhin ihren jeweiligen Lizenzen, wie in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) beschrieben.
 
 ## Kontakt
 
