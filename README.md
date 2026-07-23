@@ -5,182 +5,178 @@
 <h1 align="center">BoltUpdateTool</h1>
 
 <p align="center">
-  An unofficial macOS firmware updater for the Logitech Bolt USB receiver.<br>
-  Ein inoffizielles macOS-Werkzeug zum Aktualisieren des Logitech-Bolt-USB-Empfängers.
+  <strong>English</strong> · <a href="README.de.md">Deutsch</a>
+</p>
+
+<p align="center">
+  An unofficial macOS firmware updater for the Logitech Bolt USB receiver.
 </p>
 
 > [!WARNING]
-> Dieses Projekt ist experimentell und nicht von Logitech entwickelt, geprüft oder unterstützt.
-> Ein unterbrochener oder ungeeigneter Firmware-Flash kann den Empfänger unbrauchbar machen.
-> Verwende das Tool auf eigene Verantwortung und nach Möglichkeit zunächst mit einem
-> entbehrlichen Testempfänger.
+> This project is experimental and is not developed, reviewed, or supported by Logitech.
+> An interrupted flash or an incompatible firmware package may render the receiver unusable.
+> Use this tool at your own risk and, whenever possible, test it with a spare receiver first.
 
-## Überblick
+## Overview
 
-BoltUpdateTool ist eine native SwiftUI-App für macOS. Sie erkennt einen Logitech-Bolt-Empfänger,
-liest dessen Firmwareinformationen über HID++ aus und überträgt ein vom Nutzer ausgewähltes,
-signiertes Firmwarepaket. Die Firmware selbst ist **nicht** Bestandteil dieses Repositorys und
-wird von der App auch nicht aus dem Internet geladen.
+BoltUpdateTool is a native SwiftUI application for macOS. It detects a Logitech Bolt receiver,
+reads its firmware information through HID++, and transfers a signed firmware package selected
+by the user. Firmware is **not** included in this repository, and the application does not
+download it from the internet.
 
-Die App unterstützt den vollständigen Aktualisierungsablauf:
+The application supports the complete update process:
 
-1. Bolt-Empfänger im normalen Betriebsmodus erkennen
-2. installierte Firmwarekomponenten auslesen
-3. zwei ausgewählte DFU-Dateien validieren
-4. den Empfänger in den Bootloader versetzen
-5. Applikations- und Funk-Firmware übertragen
-6. den Empfänger neu starten und die installierte Version prüfen
+1. Detect the Bolt receiver in runtime mode
+2. Read the installed firmware components
+3. Validate two selected DFU files
+4. Switch the receiver into bootloader mode
+5. Transfer the application and radio firmware
+6. Restart the receiver and verify the installed version
 
-Der Fortschrittsbalken bleibt während des Flashens sichtbar. Wenn der automatische Wechsel in
-den Bootloader nicht sofort erkannt wird, führt die App verständlich durch das Abziehen und
-erneute Einstecken des Empfängers.
+The progress bar remains visible throughout flashing. If the automatic bootloader transition
+is not detected immediately, the application provides clear instructions for unplugging and
+reconnecting the receiver.
 
-## Projektstatus
+## Project status
 
-- Hardware-getestet mit Logitech Bolt USB Receiver
-- Native macOS-App, keine Kernel-Erweiterung erforderlich
-- Lokale Verarbeitung ohne Telemetrie oder Netzwerkzugriff
-- Firmware muss manuell ausgewählt werden
-- Kein absichtlicher Downgrade-Modus
-- Windows-Version derzeit nicht enthalten
+- Hardware-tested with the Logitech Bolt USB Receiver
+- Native macOS application with no kernel extension
+- Entirely local operation with no telemetry or network access
+- Firmware must be selected manually
+- No intentional firmware downgrade mode
+- No Windows version is currently included
 
-Obwohl der praktische Updateablauf getestet wurde, sollte die App weiterhin als experimentell
-betrachtet werden. Unterschiedliche Hardware- oder Firmware-Revisionen können sich anders
-verhalten.
+Although the practical update process has been tested, the application should still be treated
+as experimental. Other hardware or firmware revisions may behave differently.
 
-## Unterstützte Hardware
+## Supported hardware
 
-| Zustand | USB Vendor ID | USB Product ID | Protokoll |
+| State | USB Vendor ID | USB Product ID | Protocol |
 |---|---:|---:|---|
-| Normalbetrieb | `046D` | `C548` | HID++ 1.0 |
+| Runtime | `046D` | `C548` | HID++ 1.0 |
 | Bootloader | `046D` | `AB07` | HID++ 2.0 |
 
-Im Normalbetrieb wird die Logitech-spezifische HID-Schnittstelle mit Usage Page `FF00` und
-Usage `0001` verwendet. Die übrigen HID-Schnittstellen des Empfängers gehören unter anderem zu
-Tastatur-, Maus- und Consumer-Control-Funktionen und sind für das Update nicht geeignet.
+In runtime mode, the application uses the Logitech-specific HID interface with Usage Page
+`FF00` and Usage `0001`. The receiver's other HID interfaces provide keyboard, mouse, and
+consumer-control functions and are not suitable for firmware updates.
 
-Andere Logitech-Empfänger, Unifying-Empfänger und beliebige Geräte mit abweichenden IDs werden
-nicht unterstützt.
+Other Logitech receivers, Unifying receivers, and devices with different IDs are not
+supported.
 
-## Voraussetzungen
+## Requirements
 
-Zum Ausführen:
+To run the application:
 
-- macOS 26.0 oder neuer
+- macOS 26.0 or later
 - Logitech Bolt USB Receiver
-- zwei zueinander passende, signierte Bolt-DFU-Dateien
-- eine stabile, direkte USB-Verbindung
+- two matching, signed Bolt DFU files
+- a stable, direct USB connection
 
-Zum Bauen:
+To build the application:
 
-- Xcode 26 oder neuer
+- Xcode 26 or later
 - Swift 5 Language Mode
-- ein für macOS konfiguriertes Apple-Developer-Team, falls die App signiert oder notarisiert
-  verteilt werden soll
+- an Apple Developer team configured for macOS if the application will be signed or notarized
+  for distribution
 
-Das derzeit im Xcode-Projekt eingestellte Deployment Target der App ist macOS 26.0.
+The current deployment target of the application target is macOS 26.0.
 
-## Firmware auswählen
+## Selecting firmware
 
-BoltUpdateTool erwartet **zwei entpackte `.dfu`-Dateien**, die gemeinsam in der Dateiauswahl
-markiert werden:
+BoltUpdateTool expects **two unpacked `.dfu` files**, selected together in the file picker:
 
-- die Applikations-Firmware des Empfängers
-- die zugehörige Funk-/Sekundär-Firmware
+- the receiver application firmware
+- the matching radio/secondary firmware
 
-Eine ZIP-Datei kann nicht direkt ausgewählt werden. Entpacke das rechtmäßig bezogene
-Firmwarepaket vorher und wähle anschließend beide DFU-Dateien gleichzeitig aus.
+A ZIP archive cannot be selected directly. Extract the lawfully obtained firmware package
+first, then select both DFU files at the same time.
 
-Die App prüft unter anderem:
+The application validates, among other details:
 
-- Dateiendung und plausible Dateigröße
-- erwartete Bolt-DFU-Kennung
-- unterschiedliche und zueinander passende Firmware-Entitäten
-- Applikations- und Funkkomponente als vollständiges Paar
+- the file extension and a plausible file size
+- the expected Bolt DFU identifier
+- distinct and matching firmware entities
+- a complete application and radio firmware pair
 
-Diese Prüfungen reduzieren versehentliche Falschauswahlen, können aber nicht garantieren, dass
-ein Paket zu jeder Hardware-Revision passt. Verwende ausschließlich signierte Firmware aus
-einer Quelle, zu deren Nutzung du berechtigt bist.
+These checks reduce accidental incorrect selections, but they cannot guarantee that a package
+is compatible with every hardware revision. Only use signed firmware obtained from a source
+that you are authorized to use.
 
-## Verwendung
+## Usage
 
-1. Schließe Anwendungen, die auf den Empfänger zugreifen können, beispielsweise Logi Options+.
-2. Verbinde den Bolt-Empfänger möglichst direkt mit dem Mac.
-3. Starte BoltUpdateTool.
-4. Prüfe die angezeigten Firmwareinformationen.
-5. Klicke bei den Firmwaredateien auf **Change files**.
-6. Wähle beide zusammengehörigen `.dfu`-Dateien gleichzeitig aus.
-7. Prüfe die erkannten Versionsnummern.
-8. Starte das Update mit **Update receiver**.
-9. Ziehe den Empfänger nur dann ab und stecke ihn wieder ein, wenn die App ausdrücklich dazu
-   auffordert.
-10. Warte auf die erfolgreiche Abschlussprüfung.
+1. Close applications that may access the receiver, such as Logi Options+.
+2. Connect the Bolt receiver directly to the Mac whenever possible.
+3. Launch BoltUpdateTool.
+4. Review the displayed firmware information.
+5. Click **Change files** in the firmware section.
+6. Select both matching `.dfu` files at the same time.
+7. Review the detected version numbers.
+8. Start the update with **Update receiver**.
+9. Only unplug and reconnect the receiver when the application explicitly asks you to do so.
+10. Wait for the final verification to complete successfully.
 
-Während Firmwaredaten geschrieben werden, darf die USB-Verbindung nicht getrennt und der Mac
-nicht ausgeschaltet werden.
+Do not disconnect USB or turn off the Mac while firmware data is being written.
 
-## Technischer Ablauf
+## Technical update flow
 
-Im Normalbetrieb kommuniziert die App über HID++ 1.0 mit dem Empfänger. Über das Register `F5`
-wird der signierte DFU-Modus vorbereitet. Danach meldet sich das Gerät mit der Bootloader-PID
-`AB07` neu an.
+In runtime mode, the application communicates with the receiver through HID++ 1.0. It prepares
+signed DFU mode through register `F5`. The device then reconnects with bootloader PID `AB07`.
 
-Im Bootloader verwendet BoltUpdateTool HID++ 2.0 und die DFU-Funktion `0x00D0`. Die Images
-werden paketweise übertragen, bestätigt und anschließend aktiviert. Danach wartet die App
-erneut auf die Runtime-PID `C548` und liest die Firmwareinformationen zur Kontrolle aus.
+In bootloader mode, BoltUpdateTool uses HID++ 2.0 and DFU feature `0x00D0`. The images are sent
+in packets, acknowledged, and activated. The application then waits for runtime PID `C548` to
+return and reads the firmware information again for verification.
 
 ```text
 C548 Runtime
-    │  HID++ 1.0 / DFU vorbereiten
+    │  HID++ 1.0 / prepare DFU
     ▼
 AB07 Bootloader
-    │  HID++ 2.0 / Firmware übertragen
+    │  HID++ 2.0 / transfer firmware
     ▼
 C548 Runtime
-       Versionen erneut auslesen
+       read versions again
 ```
 
-## Fehlerbehebung
+## Troubleshooting
 
-### Der Empfänger wird nicht gefunden
+### The receiver is not detected
 
-- Bolt-Empfänger abziehen und erneut verbinden
-- einen direkten USB-Port statt eines instabilen Hubs verwenden
-- Logi Options+, Logitech Firmware Update Tool und ähnliche Programme vollständig beenden
-- mit **Refresh info** erneut suchen
-- prüfen, ob tatsächlich ein Bolt-Empfänger mit PID `C548` angeschlossen ist
+- Unplug and reconnect the Bolt receiver
+- Use a direct USB port instead of an unreliable hub
+- Fully quit Logi Options+, Logitech Firmware Update Tool, and similar applications
+- Search again with **Refresh info**
+- Confirm that the connected device is a Bolt receiver with PID `C548`
 
-### Die App wartet auf den Bootloader
+### The application is waiting for the bootloader
 
-Der Empfänger kann während des DFU-Befehls kurz vollständig aus der Geräteliste verschwinden.
-Folge der Anzeige in der App. Falls erforderlich, ziehe den Empfänger einmal ab und stecke ihn
-wieder ein. Die App wartet anschließend auf die Bootloader-PID `AB07`.
+The receiver may briefly disappear completely from the device list during the DFU command.
+Follow the instructions shown by the application. If requested, unplug the receiver once and
+reconnect it. The application will continue waiting for bootloader PID `AB07`.
 
-### `IOHIDDeviceSetReport` schlägt fehl
+### `IOHIDDeviceSetReport` fails
 
-Häufige Ursachen sind eine von einem anderen Programm belegte HID-Schnittstelle, ein
-ungeeigneter USB-Hub oder ein Gerätewechsel genau während des Befehls. Beende andere
-Logitech-Programme, verbinde den Empfänger direkt und versuche es erneut.
+Common causes include a HID interface held by another application, an unsuitable USB hub, or
+the device switching modes during the command. Close other Logitech applications, connect the
+receiver directly, and try again.
 
-Ein solcher Fehler bedeutet nicht automatisch, dass bereits dieselbe Firmware installiert ist.
-Bei gleicher Version sollte die App den Nutzer darauf hinweisen, anstatt den Fehler als
-Versionsvergleich zu interpretieren.
+This error does not automatically mean that the same firmware version is already installed.
+When the selected version is identical, the application should explain that condition instead
+of interpreting a transport error as a version comparison.
 
 ### `DFU packet 0 failed: unhandled status 0x27 (0xa7)`
 
-Der Bootloader hat das Image bereits beim ersten Datenpaket zurückgewiesen. Das tritt
-beispielsweise bei einem nicht passenden, beschädigten oder nicht erlaubten Paket auf. Auch
-Downgrades können vom signierten Bootloader abgelehnt werden. Wiederholtes Flashen desselben
-Pakets umgeht diese Prüfung nicht.
+The bootloader rejected the image at the first data packet. This can happen when the package is
+incompatible, damaged, or not permitted. The signed bootloader may also reject firmware
+downgrades. Repeating the same flash does not bypass this check.
 
-### Die Dateiauswahl wird abgelehnt
+### The file selection is rejected
 
-Wähle genau zwei entpackte `.dfu`-Dateien desselben Firmwarepakets gleichzeitig aus. Eine
-einzelne Datei, zwei Applikationsdateien oder zwei Sekundärdateien bilden kein gültiges Paket.
+Select exactly two unpacked `.dfu` files from the same firmware package at the same time. A
+single file, two application images, or two secondary images do not form a valid package.
 
-## Aus dem Quellcode bauen
+## Building from source
 
-Repository klonen und das Projekt öffnen:
+Clone the repository and open the project:
 
 ```bash
 git clone https://github.com/FelixStopa/BoltUpdateTool.git
@@ -188,11 +184,10 @@ cd BoltUpdateTool
 open BoltUpdateTool.xcodeproj
 ```
 
-Wähle in Xcode das Scheme **BoltUpdateTool** und starte die App mit **Run**. Für eine lokale
-Entwicklungsfassung kann in den Signing-Einstellungen das eigene Development Team gewählt
-werden.
+Select the **BoltUpdateTool** scheme in Xcode and run the application. For a local development
+build, select your own Development Team in the Signing settings.
 
-Alternativ lässt sich ein nicht signierter Test-Build über die Kommandozeile erstellen:
+Alternatively, create an unsigned test build from the command line:
 
 ```bash
 xcodebuild \
@@ -206,7 +201,7 @@ xcodebuild \
 
 ## Tests
 
-Die Unit-Tests prüfen insbesondere die Auswahl und Zuordnung der beiden Firmwaredateien:
+The unit tests primarily cover selection and classification of the two firmware files:
 
 ```bash
 xcodebuild \
@@ -218,72 +213,68 @@ xcodebuild \
   test
 ```
 
-Ein Unit-Test ersetzt keinen Hardwaretest. Änderungen an HID++, DFU-Paketierung,
-Zeitüberschreitungen oder Geräteübergängen sollten immer zusätzlich mit einem Testempfänger
-geprüft werden.
+Unit tests are not a replacement for hardware testing. Changes to HID++, DFU packet handling,
+timeouts, or device transitions should also be tested with a spare receiver.
 
-## Projektstruktur
+## Project structure
 
 ```text
 BoltUpdateTool/
-├── BoltUpdateTool/                 SwiftUI-App und Zustandsmodell
-│   ├── HIDPP/                      HID++, Geräteerkennung und DFU
-│   └── Assets.xcassets/            App-Icon und Farben
-├── BoltUpdateToolTests/            Unit-Tests
-├── BoltUpdateToolUITests/          UI-Test-Target
-└── BoltUpdateTool.xcodeproj/       Xcode-Projekt
+├── BoltUpdateTool/                 SwiftUI application and state model
+│   ├── HIDPP/                      HID++, device detection, and DFU
+│   └── Assets.xcassets/            Application icon and colors
+├── BoltUpdateToolTests/            Unit tests
+├── BoltUpdateToolUITests/          UI test target
+└── BoltUpdateTool.xcodeproj/       Xcode project
 ```
 
-Wichtige Komponenten:
+Important components:
 
-- `HIDDeviceManager`: erkennt Runtime- und Bootloader-Schnittstellen
-- `Hidpp10Session`: Kommunikation und Firmwareinformationen im Normalbetrieb
-- `Hidpp20Session`: Feature-Erkennung im Bootloader
-- `DfuFlasher`: paketweise Übertragung und Statusauswertung
-- `FirmwarePackage`: sichere Auswahl und Validierung der beiden DFU-Dateien
-- `UpdaterViewModel`: koordiniert Erkennung, Updateablauf, Fortschritt und Fehlermeldungen
+- `HIDDeviceManager`: detects runtime and bootloader interfaces
+- `Hidpp10Session`: runtime communication and firmware information
+- `Hidpp20Session`: bootloader feature discovery
+- `DfuFlasher`: packet transfer and status handling
+- `FirmwarePackage`: safe selection and validation of both DFU files
+- `UpdaterViewModel`: coordinates detection, update flow, progress, and errors
 
-## Datenschutz
+## Privacy
 
 BoltUpdateTool:
 
-- sendet keine Telemetrie
-- enthält keine Benutzerkonten
-- lädt keine Firmware herunter
-- überträgt keine Geräteinformationen ins Internet
+- sends no telemetry
+- uses no user accounts
+- does not download firmware
+- does not transmit device information over the internet
 
-Die Kommunikation findet lokal zwischen der App und dem USB-Empfänger statt. Links in der
-Oberfläche werden nur geöffnet, wenn der Nutzer darauf klickt.
+Communication takes place locally between the application and the USB receiver. Links in the
+interface are only opened when the user clicks them.
 
-## Beiträge
+## Contributing
 
-Fehlerberichte und nachvollziehbare Verbesserungen sind willkommen. Bitte gib bei einem
-Hardwareproblem mindestens folgende Informationen an:
+Reproducible bug reports and well-tested improvements are welcome. For hardware-related issues,
+please include at least:
 
-- macOS-Version und Mac-Modell
-- Runtime- oder Bootloader-PID
-- angezeigte Firmwareversionen
-- vollständige Fehlermeldung ohne private Daten
-- ob ein Hub oder Adapter verwendet wurde
+- macOS version and Mac model
+- runtime or bootloader PID
+- displayed firmware versions
+- complete error text with private information removed
+- whether a USB hub or adapter was used
 
-Veröffentliche keine proprietären Firmwaredateien oder Bestandteile offizieller
-Logitech-Anwendungen in Issues, Pull Requests oder Forks dieses Repositorys.
+Do not publish proprietary firmware or components of official Logitech applications in issues,
+pull requests, or forks of this repository.
 
-## Rechtliche Hinweise
+## Legal notice
 
-Logitech, Logi, Bolt und die zugehörigen Marken sind Eigentum ihrer jeweiligen Rechteinhaber.
-Dieses Projekt steht in keiner Verbindung zu Logitech und wird von Logitech weder unterstützt
-noch empfohlen.
+Logitech, Logi, Bolt, and related trademarks belong to their respective owners. This project is
+not affiliated with Logitech and is neither supported nor endorsed by Logitech.
 
-Das Repository enthält keine Logitech-Firmware und keine offiziellen Logitech-Anwendungen.
-Protokollverhalten und Konstanten wurden anhand öffentlich verfügbarer Implementierungen und
-durch Geräteanalyse nachvollzogen. Weitere Angaben befinden sich in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This repository contains no Logitech firmware and no official Logitech applications. Protocol
+behavior and constants were reconstructed through device analysis and publicly available
+implementations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for further information.
 
-Für dieses Projekt wurde noch keine Softwarelizenz ausgewählt. Die öffentliche Sichtbarkeit des
-Quellcodes ist daher nicht automatisch eine Erlaubnis, ihn zu kopieren, zu verändern oder
-weiterzuverbreiten.
+No software license has been selected for this project yet. Public availability of the source
+code does not automatically grant permission to copy, modify, or redistribute it.
 
-## Kontakt
+## Contact
 
-Projekt und technische Hinweise: [felix.stopa.net](https://felix.stopa.net)
+Project and technical information: [felix.stopa.net](https://felix.stopa.net)
