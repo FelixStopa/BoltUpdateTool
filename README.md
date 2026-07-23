@@ -10,7 +10,7 @@
 
 <p align="center">
   An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver,<br>
-  created to address PlayStation 5 (PS5) compatibility problems with older receiver firmware.
+  built after an older receiver firmware caused problems on PlayStation 5.
 </p>
 
 > [!WARNING]
@@ -40,24 +40,13 @@ reconnecting the receiver.
 
 ## PlayStation 5 (PS5) compatibility
 
-This project was created to solve a practical compatibility problem: a Logitech Bolt receiver
-with older firmware did not work as expected when connected to a PlayStation 5. After updating
-the receiver to a newer compatible firmware version, it worked with the PS5 in the author's
-tested setup.
+I built this tool because my Logitech Bolt receiver did not work on the PS5 with its older
+firmware. After updating it to application firmware `MPR05.03_B0020` and radio firmware
+`00.00_B013E`, it worked in my setup.
 
-The tested receiver reported application firmware `MPR05.03_B0020` and radio/secondary firmware
-`00.00_B013E` after the update. These version numbers document the tested setup; they are not a
-firmware download or a general compatibility guarantee.
-
-If you found this project while searching for **“Logitech Bolt receiver not working on PS5”**,
-**“Logitech Bolt PS5 firmware update”**, or **“Logitech Bolt PlayStation 5 compatibility”**,
-BoltUpdateTool may help you update the receiver firmware. The compatible firmware itself is not
-included and must be obtained lawfully.
-
-This does not guarantee that every Logitech device, keyboard, mouse, or firmware combination
-will work with PlayStation 5. Compatibility can depend on the paired device, receiver firmware,
-console software, and USB behavior. This project is not affiliated with or supported by Sony,
-PlayStation, or Logitech.
+If your Logitech Bolt receiver is not working on PlayStation 5, a firmware update may help.
+Firmware is not included, and compatibility can still vary by device. This is an unofficial
+project and is not affiliated with Logitech or Sony.
 
 ## Project status
 

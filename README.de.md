@@ -10,8 +10,7 @@
 
 <p align="center">
   An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver.<br>
-  Ein inoffizielles macOS- und Windows-Werkzeug für Firmwareupdates und
-  PlayStation-5-Kompatibilitätsprobleme älterer Logitech-Bolt-Empfänger.
+  Entstanden, weil ein Bolt-Empfänger mit älterer Firmware an der PS5 nicht funktionierte.
 </p>
 
 > [!WARNING]
@@ -42,26 +41,14 @@ erneute Einstecken des Empfängers.
 
 ## PlayStation 5 (PS5) Kompatibilität
 
-Dieses Projekt entstand aus einem konkreten Kompatibilitätsproblem: Ein Logitech-Bolt-Empfänger
-mit älterer Firmware funktionierte an einer PlayStation 5 nicht wie erwartet. Nach dem Update
-des Empfängers auf eine neuere kompatible Firmwareversion funktionierte er im getesteten Aufbau
-des Autors mit der PS5.
+Ich habe dieses Tool gebaut, weil mein Logitech-Bolt-Empfänger mit seiner älteren Firmware an
+der PS5 nicht funktionierte. Nach dem Update auf die Applikationsfirmware `MPR05.03_B0020` und
+die Funkfirmware `00.00_B013E` funktionierte er bei mir.
 
-Der getestete Empfänger zeigte nach dem Update die Applikationsfirmware `MPR05.03_B0020` und die
-Funk-/Sekundärfirmware `00.00_B013E` an. Diese Versionsnummern dokumentieren lediglich den
-getesteten Aufbau; sie sind kein Firmwaredownload und keine allgemeine Kompatibilitätsgarantie.
-
-Wenn du nach **„Logitech Bolt Empfänger funktioniert nicht an PS5“**,
-**„Logitech Bolt PS5 Firmware Update“** oder
-**„Logitech Bolt PlayStation 5 Kompatibilität“** gesucht hast, kann BoltUpdateTool dabei helfen,
-die Firmware des Empfängers zu aktualisieren. Die kompatible Firmware selbst ist nicht enthalten
-und muss rechtmäßig bezogen werden.
-
-Dies ist keine Garantie, dass jede Logitech-Tastatur, Maus, Firmware- oder Gerätekombination mit
-der PlayStation 5 funktioniert. Die Kompatibilität kann vom verbundenen Gerät, der
-Empfängerfirmware, der Konsolensoftware und dem USB-Verhalten abhängen. Dieses Projekt steht in
-keiner Verbindung zu Sony, PlayStation oder Logitech und wird von diesen Unternehmen nicht
-unterstützt.
+Wenn dein Logitech-Bolt-Empfänger an der PlayStation 5 nicht funktioniert, kann ein
+Firmwareupdate helfen. Die Firmware ist nicht enthalten und die Kompatibilität kann je nach
+Gerät abweichen. Das Projekt ist inoffiziell und steht nicht mit Logitech oder Sony in
+Verbindung.
 
 ## Projektstatus
 
