@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolt.Protocol", "src\Bolt.Protocol\Bolt.Protocol.csproj", "{635826A2-740A-42AB-8605-567772416EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolt.WindowsHid", "src\Bolt.WindowsHid\Bolt.WindowsHid.csproj", "{4E51A508-9F40-45B0-8B85-F59E1436C766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoltUpdateTool.Windows", "src\BoltUpdateTool.Windows\BoltUpdateTool.Windows.csproj", "{EDC9A7B8-8450-4AC4-A4BD-E0B6AA04875B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolt.Protocol.Tests", "tests\Bolt.Protocol.Tests\Bolt.Protocol.Tests.csproj", "{63F4BF13-D859-4F35-9657-3D498BAE79B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{635826A2-740A-42AB-8605-567772416EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635826A2-740A-42AB-8605-567772416EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635826A2-740A-42AB-8605-567772416EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635826A2-740A-42AB-8605-567772416EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E51A508-9F40-45B0-8B85-F59E1436C766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E51A508-9F40-45B0-8B85-F59E1436C766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E51A508-9F40-45B0-8B85-F59E1436C766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E51A508-9F40-45B0-8B85-F59E1436C766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC9A7B8-8450-4AC4-A4BD-E0B6AA04875B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC9A7B8-8450-4AC4-A4BD-E0B6AA04875B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC9A7B8-8450-4AC4-A4BD-E0B6AA04875B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC9A7B8-8450-4AC4-A4BD-E0B6AA04875B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F4BF13-D859-4F35-9657-3D498BAE79B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F4BF13-D859-4F35-9657-3D498BAE79B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F4BF13-D859-4F35-9657-3D498BAE79B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F4BF13-D859-4F35-9657-3D498BAE79B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

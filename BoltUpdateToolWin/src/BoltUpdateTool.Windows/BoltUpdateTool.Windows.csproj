@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\BoltUpdateTool.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bolt.Protocol\Bolt.Protocol.csproj" />
+    <ProjectReference Include="..\Bolt.WindowsHid\Bolt.WindowsHid.csproj" />
+    <Resource Include="Assets\BoltUpdateTool.ico" />
+  </ItemGroup>
+</Project>
