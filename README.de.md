@@ -10,7 +10,8 @@
 
 <p align="center">
   An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver.<br>
-  Ein inoffizielles macOS- und Windows-Werkzeug zum Aktualisieren des Logitech-Bolt-USB-Empfängers.
+  Ein inoffizielles macOS- und Windows-Werkzeug für Firmwareupdates und
+  PlayStation-5-Kompatibilitätsprobleme älterer Logitech-Bolt-Empfänger.
 </p>
 
 > [!WARNING]
@@ -38,6 +39,29 @@ Die App unterstützt den vollständigen Aktualisierungsablauf:
 Der Fortschrittsbalken bleibt während des Flashens sichtbar. Wenn der automatische Wechsel in
 den Bootloader nicht sofort erkannt wird, führt die App verständlich durch das Abziehen und
 erneute Einstecken des Empfängers.
+
+## PlayStation 5 (PS5) Kompatibilität
+
+Dieses Projekt entstand aus einem konkreten Kompatibilitätsproblem: Ein Logitech-Bolt-Empfänger
+mit älterer Firmware funktionierte an einer PlayStation 5 nicht wie erwartet. Nach dem Update
+des Empfängers auf eine neuere kompatible Firmwareversion funktionierte er im getesteten Aufbau
+des Autors mit der PS5.
+
+Der getestete Empfänger zeigte nach dem Update die Applikationsfirmware `MPR05.03_B0020` und die
+Funk-/Sekundärfirmware `00.00_B013E` an. Diese Versionsnummern dokumentieren lediglich den
+getesteten Aufbau; sie sind kein Firmwaredownload und keine allgemeine Kompatibilitätsgarantie.
+
+Wenn du nach **„Logitech Bolt Empfänger funktioniert nicht an PS5“**,
+**„Logitech Bolt PS5 Firmware Update“** oder
+**„Logitech Bolt PlayStation 5 Kompatibilität“** gesucht hast, kann BoltUpdateTool dabei helfen,
+die Firmware des Empfängers zu aktualisieren. Die kompatible Firmware selbst ist nicht enthalten
+und muss rechtmäßig bezogen werden.
+
+Dies ist keine Garantie, dass jede Logitech-Tastatur, Maus, Firmware- oder Gerätekombination mit
+der PlayStation 5 funktioniert. Die Kompatibilität kann vom verbundenen Gerät, der
+Empfängerfirmware, der Konsolensoftware und dem USB-Verhalten abhängen. Dieses Projekt steht in
+keiner Verbindung zu Sony, PlayStation oder Logitech und wird von diesen Unternehmen nicht
+unterstützt.
 
 ## Projektstatus
 
@@ -314,6 +338,10 @@ Logitech-Anwendungen in Issues, Pull Requests oder Forks dieses Repositorys.
 
 Logitech, Logi, Bolt und die zugehörigen Marken sind Eigentum ihrer jeweiligen Rechteinhaber.
 Dieses Projekt steht in keiner Verbindung zu Logitech und wird von Logitech weder unterstützt
+noch empfohlen.
+
+PlayStation und PS5 sind Marken von Sony Interactive Entertainment Inc. Dieses Projekt steht
+in keiner Verbindung zu Sony Interactive Entertainment und wird von Sony weder unterstützt
 noch empfohlen.
 
 Das Repository enthält keine Logitech-Firmware und keine offiziellen Logitech-Anwendungen.

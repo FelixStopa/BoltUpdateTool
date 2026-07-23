@@ -9,7 +9,8 @@
 </p>
 
 <p align="center">
-  An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver.
+  An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver,<br>
+  created to address PlayStation 5 (PS5) compatibility problems with older receiver firmware.
 </p>
 
 > [!WARNING]
@@ -36,6 +37,27 @@ The application supports the complete update process:
 The progress bar remains visible throughout flashing. If the automatic bootloader transition
 is not detected immediately, the application provides clear instructions for unplugging and
 reconnecting the receiver.
+
+## PlayStation 5 (PS5) compatibility
+
+This project was created to solve a practical compatibility problem: a Logitech Bolt receiver
+with older firmware did not work as expected when connected to a PlayStation 5. After updating
+the receiver to a newer compatible firmware version, it worked with the PS5 in the author's
+tested setup.
+
+The tested receiver reported application firmware `MPR05.03_B0020` and radio/secondary firmware
+`00.00_B013E` after the update. These version numbers document the tested setup; they are not a
+firmware download or a general compatibility guarantee.
+
+If you found this project while searching for **“Logitech Bolt receiver not working on PS5”**,
+**“Logitech Bolt PS5 firmware update”**, or **“Logitech Bolt PlayStation 5 compatibility”**,
+BoltUpdateTool may help you update the receiver firmware. The compatible firmware itself is not
+included and must be obtained lawfully.
+
+This does not guarantee that every Logitech device, keyboard, mouse, or firmware combination
+will work with PlayStation 5. Compatibility can depend on the paired device, receiver firmware,
+console software, and USB behavior. This project is not affiliated with or supported by Sony,
+PlayStation, or Logitech.
 
 ## Project status
 
@@ -304,6 +326,9 @@ pull requests, or forks of this repository.
 
 Logitech, Logi, Bolt, and related trademarks belong to their respective owners. This project is
 not affiliated with Logitech and is neither supported nor endorsed by Logitech.
+
+PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc. This project is not
+affiliated with, supported by, or endorsed by Sony Interactive Entertainment.
 
 This repository contains no Logitech firmware and no official Logitech applications. Protocol
 behavior and constants were reconstructed through device analysis and publicly available
