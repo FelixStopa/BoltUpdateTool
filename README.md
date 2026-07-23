@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  An unofficial macOS firmware updater for the Logitech Bolt USB receiver.
+  An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver.
 </p>
 
 > [!WARNING]
@@ -19,10 +19,10 @@
 
 ## Overview
 
-BoltUpdateTool is a native SwiftUI application for macOS. It detects a Logitech Bolt receiver,
-reads its firmware information through HID++, and transfers a signed firmware package selected
-by the user. Firmware is **not** included in this repository, and the application does not
-download it from the internet.
+BoltUpdateTool provides native applications for macOS (SwiftUI) and Windows (WPF/.NET). It
+detects a Logitech Bolt receiver, reads its firmware information through HID++, and transfers a
+signed firmware package selected by the user. Firmware is **not** included in this repository,
+and neither application downloads it from the internet.
 
 The application supports the complete update process:
 
@@ -40,11 +40,11 @@ reconnecting the receiver.
 ## Project status
 
 - Hardware-tested with the Logitech Bolt USB Receiver
-- Native macOS application with no kernel extension
+- Native applications for macOS and Windows
 - Entirely local operation with no telemetry or network access
 - Firmware must be selected manually
 - No intentional firmware downgrade mode
-- No Windows version is currently included
+- Windows ARM64 release available; x64 build is not yet published
 
 Although the practical update process has been tested, the application should still be treated
 as experimental. Other hardware or firmware revisions may behave differently.
@@ -67,7 +67,7 @@ supported.
 
 To run the application:
 
-- macOS 26.0 or later
+- macOS 26.0 or later, or Windows 11 ARM64 with .NET 10 Desktop Runtime
 - Logitech Bolt USB Receiver
 - two matching, signed Bolt DFU files
 - a stable, direct USB connection
@@ -78,8 +78,20 @@ To build the application:
 - Swift 5 Language Mode
 - an Apple Developer team configured for macOS if the application will be signed or notarized
   for distribution
+- .NET 10 SDK on Windows for the WPF application
 
-The current deployment target of the application target is macOS 26.0.
+The current macOS deployment target is macOS 26.0. The available Windows binary targets
+Windows ARM64 and requires the .NET 10 Desktop Runtime.
+
+## Downloads
+
+| Platform | Download | Notes |
+|---|---|---|
+| macOS | [BoltUpdateTool 1.0.0](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/v1.0.0) | Universal, Developer ID signed and notarized |
+| Windows ARM64 | [BoltUpdateTool 1.0.0 for Windows ARM64](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/windows-v1.0.0) | Framework-dependent, currently unsigned |
+
+The Windows build is not Authenticode-signed. Windows SmartScreen may therefore display a
+warning. Verify the SHA-256 checksum published with the release before running it.
 
 ## Selecting firmware
 
@@ -105,7 +117,7 @@ that you are authorized to use.
 ## Usage
 
 1. Close applications that may access the receiver, such as Logi Options+.
-2. Connect the Bolt receiver directly to the Mac whenever possible.
+2. Connect the Bolt receiver directly to the computer whenever possible.
 3. Launch BoltUpdateTool.
 4. Review the displayed firmware information.
 5. Click **Change files** in the firmware section.
@@ -115,7 +127,7 @@ that you are authorized to use.
 9. Only unplug and reconnect the receiver when the application explicitly asks you to do so.
 10. Wait for the final verification to complete successfully.
 
-Do not disconnect USB or turn off the Mac while firmware data is being written.
+Do not disconnect USB or turn off the computer while firmware data is being written.
 
 ## Technical update flow
 
@@ -176,6 +188,8 @@ single file, two application images, or two secondary images do not form a valid
 
 ## Building from source
 
+### macOS
+
 Clone the repository and open the project:
 
 ```bash
@@ -199,9 +213,22 @@ xcodebuild \
   build
 ```
 
+### Windows
+
+On a Windows system with the .NET 10 SDK:
+
+```powershell
+cd BoltUpdateToolWin
+dotnet restore BoltUpdateTool.Windows.sln
+dotnet build BoltUpdateTool.Windows.sln --configuration Release
+```
+
+See [BoltUpdateToolWin/README.md](BoltUpdateToolWin/README.md) for Windows architecture,
+publishing, and runtime details.
+
 ## Tests
 
-The unit tests primarily cover selection and classification of the two firmware files:
+The macOS unit tests primarily cover selection and classification of the two firmware files:
 
 ```bash
 xcodebuild \
@@ -211,6 +238,12 @@ xcodebuild \
   CODE_SIGNING_ALLOWED=NO \
   -only-testing:BoltUpdateToolTests \
   test
+```
+
+Run the Windows protocol and HID tests on Windows with:
+
+```powershell
+dotnet run --project BoltUpdateToolWin/tests/Bolt.Protocol.Tests
 ```
 
 Unit tests are not a replacement for hardware testing. Changes to HID++, DFU packet handling,
@@ -225,7 +258,8 @@ BoltUpdateTool/
 │   └── Assets.xcassets/            Application icon and colors
 ├── BoltUpdateToolTests/            Unit tests
 ├── BoltUpdateToolUITests/          UI test target
-└── BoltUpdateTool.xcodeproj/       Xcode project
+├── BoltUpdateTool.xcodeproj/       Xcode project
+└── BoltUpdateToolWin/              Windows WPF/.NET solution and tests
 ```
 
 Important components:
@@ -254,7 +288,7 @@ interface are only opened when the user clicks them.
 Reproducible bug reports and well-tested improvements are welcome. For hardware-related issues,
 please include at least:
 
-- macOS version and Mac model
+- operating-system version and computer architecture
 - runtime or bootloader PID
 - displayed firmware versions
 - complete error text with private information removed

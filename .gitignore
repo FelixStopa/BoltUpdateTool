@@ -8,3 +8,17 @@ DerivedData/
 *.app/
 ExtractedFirmware/
 BoltUpdateTool/Resources/*.dfu
+
+# Windows/.NET build output and local development files.
+**/bin/
+**/obj/
+BoltUpdateToolWin/artifacts/
+BoltUpdateToolWin/.agents/
+BoltUpdateToolWin/.git/
+
+# macOS reference files copied into the Windows working folder are not part
+# of the public Windows implementation.
+BoltUpdateToolWin/*.swift
+BoltUpdateToolWin/HIDPP/
+BoltUpdateToolWin/Assets.xcassets/
+BoltUpdateToolWin/Resources/

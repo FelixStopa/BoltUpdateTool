@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  An unofficial macOS firmware updater for the Logitech Bolt USB receiver.<br>
-  Ein inoffizielles macOS-Werkzeug zum Aktualisieren des Logitech-Bolt-USB-Empfängers.
+  An unofficial macOS and Windows firmware updater for the Logitech Bolt USB receiver.<br>
+  Ein inoffizielles macOS- und Windows-Werkzeug zum Aktualisieren des Logitech-Bolt-USB-Empfängers.
 </p>
 
 > [!WARNING]
@@ -21,10 +21,10 @@
 
 ## Überblick
 
-BoltUpdateTool ist eine native SwiftUI-App für macOS. Sie erkennt einen Logitech-Bolt-Empfänger,
-liest dessen Firmwareinformationen über HID++ aus und überträgt ein vom Nutzer ausgewähltes,
-signiertes Firmwarepaket. Die Firmware selbst ist **nicht** Bestandteil dieses Repositorys und
-wird von der App auch nicht aus dem Internet geladen.
+BoltUpdateTool bietet native Apps für macOS (SwiftUI) und Windows (WPF/.NET). Es erkennt einen
+Logitech-Bolt-Empfänger, liest dessen Firmwareinformationen über HID++ aus und überträgt ein vom
+Nutzer ausgewähltes, signiertes Firmwarepaket. Die Firmware selbst ist **nicht** Bestandteil
+dieses Repositorys und wird von den Apps auch nicht aus dem Internet geladen.
 
 Die App unterstützt den vollständigen Aktualisierungsablauf:
 
@@ -42,11 +42,11 @@ erneute Einstecken des Empfängers.
 ## Projektstatus
 
 - Hardware-getestet mit Logitech Bolt USB Receiver
-- Native macOS-App, keine Kernel-Erweiterung erforderlich
+- Native Apps für macOS und Windows
 - Lokale Verarbeitung ohne Telemetrie oder Netzwerkzugriff
 - Firmware muss manuell ausgewählt werden
 - Kein absichtlicher Downgrade-Modus
-- Windows-Version derzeit nicht enthalten
+- Windows-ARM64-Version verfügbar; x64 ist noch nicht veröffentlicht
 
 Obwohl der praktische Updateablauf getestet wurde, sollte die App weiterhin als experimentell
 betrachtet werden. Unterschiedliche Hardware- oder Firmware-Revisionen können sich anders
@@ -70,7 +70,7 @@ nicht unterstützt.
 
 Zum Ausführen:
 
-- macOS 26.0 oder neuer
+- macOS 26.0 oder neuer oder Windows 11 ARM64 mit .NET 10 Desktop Runtime
 - Logitech Bolt USB Receiver
 - zwei zueinander passende, signierte Bolt-DFU-Dateien
 - eine stabile, direkte USB-Verbindung
@@ -81,8 +81,20 @@ Zum Bauen:
 - Swift 5 Language Mode
 - ein für macOS konfiguriertes Apple-Developer-Team, falls die App signiert oder notarisiert
   verteilt werden soll
+- .NET 10 SDK unter Windows für die WPF-App
 
-Das derzeit im Xcode-Projekt eingestellte Deployment Target der App ist macOS 26.0.
+Das derzeitige Deployment Target der macOS-App ist macOS 26.0. Die verfügbare Windows-Datei ist
+für Windows ARM64 gebaut und benötigt die .NET 10 Desktop Runtime.
+
+## Downloads
+
+| Plattform | Download | Hinweise |
+|---|---|---|
+| macOS | [BoltUpdateTool 1.0.0](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/v1.0.0) | Universal, Developer-ID-signiert und notarisiert |
+| Windows ARM64 | [BoltUpdateTool 1.0.0 für Windows ARM64](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/windows-v1.0.0) | Framework-abhängig, derzeit nicht signiert |
+
+Die Windows-App ist noch nicht mit Authenticode signiert. Windows SmartScreen kann deshalb eine
+Warnung anzeigen. Prüfe vor dem Start die beim Release veröffentlichte SHA-256-Prüfsumme.
 
 ## Firmware auswählen
 
@@ -109,7 +121,7 @@ einer Quelle, zu deren Nutzung du berechtigt bist.
 ## Verwendung
 
 1. Schließe Anwendungen, die auf den Empfänger zugreifen können, beispielsweise Logi Options+.
-2. Verbinde den Bolt-Empfänger möglichst direkt mit dem Mac.
+2. Verbinde den Bolt-Empfänger möglichst direkt mit dem Computer.
 3. Starte BoltUpdateTool.
 4. Prüfe die angezeigten Firmwareinformationen.
 5. Klicke bei den Firmwaredateien auf **Change files**.
@@ -120,8 +132,8 @@ einer Quelle, zu deren Nutzung du berechtigt bist.
    auffordert.
 10. Warte auf die erfolgreiche Abschlussprüfung.
 
-Während Firmwaredaten geschrieben werden, darf die USB-Verbindung nicht getrennt und der Mac
-nicht ausgeschaltet werden.
+Während Firmwaredaten geschrieben werden, darf die USB-Verbindung nicht getrennt und der
+Computer nicht ausgeschaltet werden.
 
 ## Technischer Ablauf
 
@@ -184,6 +196,8 @@ einzelne Datei, zwei Applikationsdateien oder zwei Sekundärdateien bilden kein 
 
 ## Aus dem Quellcode bauen
 
+### macOS
+
 Repository klonen und das Projekt öffnen:
 
 ```bash
@@ -208,9 +222,22 @@ xcodebuild \
   build
 ```
 
+### Windows
+
+Auf einem Windows-System mit installiertem .NET 10 SDK:
+
+```powershell
+cd BoltUpdateToolWin
+dotnet restore BoltUpdateTool.Windows.sln
+dotnet build BoltUpdateTool.Windows.sln --configuration Release
+```
+
+Weitere Angaben zu Architektur, Veröffentlichung und Runtime stehen in
+[BoltUpdateToolWin/README.md](BoltUpdateToolWin/README.md).
+
 ## Tests
 
-Die Unit-Tests prüfen insbesondere die Auswahl und Zuordnung der beiden Firmwaredateien:
+Die macOS-Unit-Tests prüfen insbesondere die Auswahl und Zuordnung der beiden Firmwaredateien:
 
 ```bash
 xcodebuild \
@@ -220,6 +247,12 @@ xcodebuild \
   CODE_SIGNING_ALLOWED=NO \
   -only-testing:BoltUpdateToolTests \
   test
+```
+
+Die Windows-Protokoll- und HID-Tests werden unter Windows so gestartet:
+
+```powershell
+dotnet run --project BoltUpdateToolWin/tests/Bolt.Protocol.Tests
 ```
 
 Ein Unit-Test ersetzt keinen Hardwaretest. Änderungen an HID++, DFU-Paketierung,
@@ -235,7 +268,8 @@ BoltUpdateTool/
 │   └── Assets.xcassets/            App-Icon und Farben
 ├── BoltUpdateToolTests/            Unit-Tests
 ├── BoltUpdateToolUITests/          UI-Test-Target
-└── BoltUpdateTool.xcodeproj/       Xcode-Projekt
+├── BoltUpdateTool.xcodeproj/       Xcode-Projekt
+└── BoltUpdateToolWin/              Windows-WPF/.NET-Projekt und Tests
 ```
 
 Wichtige Komponenten:
@@ -264,7 +298,7 @@ Oberfläche werden nur geöffnet, wenn der Nutzer darauf klickt.
 Fehlerberichte und nachvollziehbare Verbesserungen sind willkommen. Bitte gib bei einem
 Hardwareproblem mindestens folgende Informationen an:
 
-- macOS-Version und Mac-Modell
+- Betriebssystemversion und Prozessorarchitektur
 - Runtime- oder Bootloader-PID
 - angezeigte Firmwareversionen
 - vollständige Fehlermeldung ohne private Daten
