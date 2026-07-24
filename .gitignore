@@ -3,12 +3,6 @@
 **/xcuserdata/
 DerivedData/
 
-# Local vendor applications and extracted proprietary firmware are never
-# included in the public source repository.
-*.app/
-ExtractedFirmware/
-BoltUpdateTool/Resources/*.dfu
-
 # Windows/.NET build output and local development files.
 **/bin/
 **/obj/
