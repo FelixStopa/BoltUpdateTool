@@ -114,22 +114,18 @@ BoltUpdateTool expects **two unpacked `.dfu` files**, selected together in the f
 - the receiver application firmware
 - the matching radio/secondary firmware
 
-A ZIP archive cannot be selected directly. Extract the lawfully obtained firmware package
-first, then select both DFU files at the same time.
+A ZIP archive cannot be selected directly. Extract the firmware package first, then select
+both DFU files at the same time.
 
 ### Firmware download
 
-A firmware package that has been used with this tool is mirrored in this project's GitHub
-releases:
+Firmware version 5.03 is available in this project's GitHub releases:
 
 **[Download Firmware_5.03.zip](https://github.com/FelixStopa/BoltUpdateTool/releases/download/firmware-5.03/Firmware_5.03.zip)**
 
 SHA-256: `a9ca9bcf00acf27f11b0f006417a2c6e3ac74701b2236cc41b7bffac261ced39`
 
-This is an unofficial mirror provided for convenience, without any guarantee regarding
-authenticity, safety, or compatibility. I am not affiliated with Logitech. All rights to the
-firmware remain with their respective owners. Make sure that you comply with all applicable
-licenses and terms before downloading or using the firmware.
+Verify compatibility with your receiver before flashing.
 
 The application validates, among other details:
 
@@ -333,10 +329,8 @@ not affiliated with Logitech and is neither supported nor endorsed by Logitech.
 PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc. This project is not
 affiliated with, supported by, or endorsed by Sony Interactive Entertainment.
 
-The source tree contains no Logitech firmware and no official Logitech applications. The
-firmware mirror is published separately as a GitHub release asset. Protocol behavior and
-constants were reconstructed through device analysis and publicly available implementations.
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for further information.
+The firmware file is published separately as a GitHub release asset. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for further information.
 
 ## License
 
