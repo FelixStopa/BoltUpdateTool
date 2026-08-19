@@ -23,8 +23,8 @@
 
 BoltUpdateTool bietet native Apps für macOS (SwiftUI) und Windows (WPF/.NET). Es erkennt einen
 Logitech-Bolt-Empfänger, liest dessen Firmwareinformationen über HID++ aus und überträgt ein vom
-Nutzer ausgewähltes, signiertes Firmwarepaket. Die Firmware selbst ist **nicht** Bestandteil
-dieses Repositorys und wird von den Apps auch nicht aus dem Internet geladen.
+Nutzer ausgewähltes, signiertes Firmwarepaket. Die Firmware ist **nicht** im Quellcode oder in
+den Apps enthalten und wird von den Apps auch nicht aus dem Internet geladen.
 
 Die App unterstützt den vollständigen Aktualisierungsablauf:
 
@@ -121,20 +121,19 @@ markiert werden:
 Eine ZIP-Datei kann nicht direkt ausgewählt werden. Entpacke das rechtmäßig bezogene
 Firmwarepaket vorher und wähle anschließend beide DFU-Dateien gleichzeitig aus.
 
-### Externer Firmware-Download
+### Firmware-Download
 
-Ein Firmwarepaket, das mit diesem Tool verwendet wurde, ist bei diesem externen Filehoster
-verfügbar:
+Ein Firmwarepaket, das mit diesem Tool verwendet wurde, wird in den GitHub-Releases dieses
+Projekts gespiegelt:
 
-**[Firmware herunterladen](https://gofile.io/d/oJAxyJ)**
+**[Firmware_5.03.zip herunterladen](https://github.com/FelixStopa/BoltUpdateTool/releases/download/firmware-5.03/Firmware_5.03.zip)**
 
-Die Dateien werden von einem externen Filehoster bereitgestellt. Ich bin weder Eigentümer noch
-Anbieter dieser Dateien, habe keine Kontrolle über deren Inhalt und stehe weder mit dem
-Filehoster noch mit Logitech in Verbindung. Der Link wird lediglich als Hinweis
-bereitgestellt, ohne Garantie für Verfügbarkeit, Echtheit, Sicherheit oder Kompatibilität.
-Alle Rechte an der Firmware verbleiben bei den jeweiligen Rechteinhabern. Stelle vor dem
-Herunterladen oder Verwenden sicher, dass du alle anwendbaren Lizenzen und Bedingungen
-einhältst.
+SHA-256: `a9ca9bcf00acf27f11b0f006417a2c6e3ac74701b2236cc41b7bffac261ced39`
+
+Dies ist eine inoffizielle Spiegelung, die ohne Garantie für Echtheit, Sicherheit oder
+Kompatibilität bereitgestellt wird. Ich stehe nicht mit Logitech in Verbindung. Alle Rechte an
+der Firmware verbleiben bei den jeweiligen Rechteinhabern. Stelle vor dem Herunterladen oder
+Verwenden sicher, dass du alle anwendbaren Lizenzen und Bedingungen einhältst.
 
 Die App prüft unter anderem:
 
@@ -346,10 +345,10 @@ PlayStation und PS5 sind Marken von Sony Interactive Entertainment Inc. Dieses P
 in keiner Verbindung zu Sony Interactive Entertainment und wird von Sony weder unterstützt
 noch empfohlen.
 
-Das Repository enthält keine Logitech-Firmware und keine offiziellen Logitech-Anwendungen.
-Protokollverhalten und Konstanten wurden anhand öffentlich verfügbarer Implementierungen und
-durch Geräteanalyse nachvollzogen. Weitere Angaben befinden sich in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Der Quellcode enthält keine Logitech-Firmware und keine offiziellen Logitech-Anwendungen. Die
+Firmware-Spiegelung wird separat als GitHub-Release-Asset veröffentlicht. Protokollverhalten und
+Konstanten wurden anhand öffentlich verfügbarer Implementierungen und durch Geräteanalyse
+nachvollzogen. Weitere Angaben befinden sich in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Lizenz
 
