@@ -101,6 +101,7 @@ and 32-bit x86. Each requires the matching architecture of the .NET 10 Desktop R
 | macOS | [BoltUpdateTool 1.0.0](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/v1.0.0) | Universal, Developer ID signed and notarized |
 | Windows ARM64 | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-arm64.zip) | Requires .NET 10 Desktop Runtime ARM64; unsigned |
 | Windows x86 (32-bit) | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-x86.zip) | Requires .NET 10 Desktop Runtime x86; unsigned |
+| Firmware 5.03 | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/firmware-5.03/Firmware_5.03.zip) | For compatible Logitech Bolt receivers; extract before use |
 
 The Windows builds are not Authenticode-signed. Windows SmartScreen may therefore display a
 warning. Verify the SHA-256 checksum published with each download before running it. The x86
