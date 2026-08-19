@@ -22,8 +22,8 @@
 
 BoltUpdateTool provides native applications for macOS (SwiftUI) and Windows (WPF/.NET). It
 detects a Logitech Bolt receiver, reads its firmware information through HID++, and transfers a
-signed firmware package selected by the user. Firmware is **not** included in this repository,
-and neither application downloads it from the internet.
+signed firmware package selected by the user. Firmware is **not** bundled with the source code
+or either application, and neither application downloads it from the internet.
 
 The application supports the complete update process:
 
@@ -101,6 +101,7 @@ and 32-bit x86. Each requires the matching architecture of the .NET 10 Desktop R
 | macOS | [BoltUpdateTool 1.0.0](https://github.com/FelixStopa/BoltUpdateTool/releases/tag/v1.0.0) | Universal, Developer ID signed and notarized |
 | Windows ARM64 | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-arm64.zip) | Requires .NET 10 Desktop Runtime ARM64; unsigned |
 | Windows x86 (32-bit) | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/windows-v1.0.0/BoltUpdateTool-1.0.0-Windows-x86.zip) | Requires .NET 10 Desktop Runtime x86; unsigned |
+| Firmware 5.03 | [Download ZIP](https://github.com/FelixStopa/BoltUpdateTool/releases/download/firmware-5.03/Firmware_5.03.zip) | For compatible Logitech Bolt receivers; extract before use |
 
 The Windows builds are not Authenticode-signed. Windows SmartScreen may therefore display a
 warning. Verify the SHA-256 checksum published with each download before running it. The x86
@@ -114,21 +115,18 @@ BoltUpdateTool expects **two unpacked `.dfu` files**, selected together in the f
 - the receiver application firmware
 - the matching radio/secondary firmware
 
-A ZIP archive cannot be selected directly. Extract the lawfully obtained firmware package
-first, then select both DFU files at the same time.
+A ZIP archive cannot be selected directly. Extract the firmware package first, then select
+both DFU files at the same time.
 
-### Third-party firmware download
+### Firmware download
 
-A firmware package that has been used with this tool is available from this external file host:
+Firmware version 5.03 is available in this project's GitHub releases:
 
-**[Download firmware](https://gofile.io/d/oJAxyJ)**
+**[Download Firmware_5.03.zip](https://github.com/FelixStopa/BoltUpdateTool/releases/download/firmware-5.03/Firmware_5.03.zip)**
 
-The files are hosted by a third-party file hosting service. I am not the owner or distributor
-of these files, I have no control over their content, and I am not affiliated with the file
-host, Logitech. This link is provided for convenience only, without any guarantee
-regarding availability, authenticity, safety, or compatibility. All rights to the firmware
-remain with their respective owners. Make sure that you comply with all applicable licenses
-and terms before downloading or using the firmware.
+SHA-256: `a9ca9bcf00acf27f11b0f006417a2c6e3ac74701b2236cc41b7bffac261ced39`
+
+Verify compatibility with your receiver before flashing.
 
 The application validates, among other details:
 
@@ -332,9 +330,8 @@ not affiliated with Logitech and is neither supported nor endorsed by Logitech.
 PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc. This project is not
 affiliated with, supported by, or endorsed by Sony Interactive Entertainment.
 
-This repository contains no Logitech firmware and no official Logitech applications. Protocol
-behavior and constants were reconstructed through device analysis and publicly available
-implementations. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for further information.
+The firmware file is published separately as a GitHub release asset. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for further information.
 
 ## License
 
